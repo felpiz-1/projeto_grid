@@ -170,12 +170,18 @@ input:focus {
 
 }
 
-.card-mensagem > img {
+.card-mensagem > .foto-perfil {
     height: 100%;
     border-radius: 100%;
     width: 50px;
     grid-row: 1/-1;
     justify-self: center;
+}
+
+.foto-perfil{
+    height: 100%;
+    border-radius: 100%;
+    width: 50px;
 }
 
 .card-mensagem > p{
@@ -209,6 +215,66 @@ input:focus {
 }
 
 main{
-    height: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
     background-image: url(imgs/whatsapp_bg.png);
+}
+
+.container-topo-mensagens{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #FFFFFF;
+}
+
+.fotoNome{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: left;
+    font-size:small;
+}
+
+.iconesMSG{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+}
+
+.grid-msg{
+    /* height:100% ; */
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    margin-top: auto;
+    row-gap: 10px;
+    overflow-y: auto;
+}
+
+.msg-recebida{
+    grid-column: 2/14;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+}
+
+.msg-enviada, .msg-recebida{
+    padding: 10px;
+
+}
+
+.msg-enviada{
+    grid-column: 12/23;
+    justify-self: right;
+    background-color: #D8F8D2;
+}
+
+.campo-texto{
+    padding: 5px;
 }
