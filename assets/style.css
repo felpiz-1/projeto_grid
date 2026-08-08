@@ -278,21 +278,18 @@ main {
 }
 
 .msg-enviada {
-  align-self: flex-end;
   grid-column: 12/24;
   padding: 5px 10px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  /* justify-content: space-between; */
+  align-items: flex-end;
 }
 
 .msg-recebida > span,
 .msg-enviada > span {
-  /* position: absolute;
-  top: 10; */
+  /* top: 10;  */
+  display:flex;
+  justify-content: end;
   font-size: 11px;
-  float: right;
-  margin-top: 5px;
-  margin-left: 10px;
 }
