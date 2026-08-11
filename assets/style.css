@@ -257,7 +257,34 @@ main {
 
 .msg-recebida {
   grid-column: 2/14;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
   background-color: #ffffff;
+}
+
+.affs {
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  rotate: 180deg;
+  top: 0px;
+  left: -15px;
+}
+
+.affs-enviadas{
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #d8f8d2;
+  rotate: 180deg;
+  top: 0px;
+  left: 680px;
 }
 
 .msg-enviada,
@@ -271,25 +298,34 @@ main {
   grid-column: 12/24;
   justify-self: right;
   background-color: #d8f8d2;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: flex-end;
 }
 
 .campo-texto {
   padding: 5px;
 }
 
-.msg-enviada {
+/* .msg-enviada {
   grid-column: 12/24;
+  width: auto;
   padding: 5px 10px;
   border-radius: 10px;
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: flex-end;
-}
+} */
 
 .msg-recebida > span,
 .msg-enviada > span {
   /* top: 10;  */
-  display:flex;
+  display: flex;
   justify-content: end;
   font-size: 11px;
 }
