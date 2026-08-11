@@ -257,7 +257,7 @@ main {
 
 .msg-recebida {
   grid-column: 2/14;
-  width: auto;
+  width: fit-content;
   height: auto;
   padding: 20px;
   border-top-right-radius: 20px;
@@ -265,6 +265,9 @@ main {
   border-bottom-right-radius: 20px;
   position: relative;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 }
 
 .affs {
@@ -303,8 +306,9 @@ main {
   border-bottom-right-radius: 20px;
   position: relative;
   height: auto;
-  width: auto;
+  width: fit-content;
   display: flex;
+  flex-direction: row;
   align-items: flex-end;
 }
 
@@ -328,4 +332,5 @@ main {
   display: flex;
   justify-content: end;
   font-size: 11px;
+  /* position:; */
 }
