@@ -41,11 +41,17 @@ nav {
   width: 40px;
 }
 
+.container_perfil {
+  display: flex;
+  flex-direction: column;
+}
+
 .container-nav > img:hover {
   background-color: #d8f8d2;
 }
 
-section {
+.section,
+.container_perfil {
   height: 100%;
   background-color: #ffffff;
   overflow-y: hidden;
@@ -280,7 +286,7 @@ main {
   left: -15px;
 }
 
-.affs-enviadas{
+.affs-enviadas {
   position: absolute;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
@@ -333,4 +339,24 @@ main {
   justify-content: end;
   font-size: 11px;
   /* position:; */
+}
+
+.ocultar {
+  display: none;
+}
+
+.img-perfil {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-perfil > img {
+  border-radius: 100%;
+}
+
+.container_perfil {
+  gap: 10px;
+  padding: 20px 15px;
+
 }
