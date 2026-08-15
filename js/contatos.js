@@ -600,7 +600,7 @@ export const usuarios = {
 };
 
 
-// console.table(usuarios["whats-users"][0].contacts)
+console.table(usuarios["whats-users"][0].contacts)
 
 export function listarUser(){
   console.table(usuarios["whats-users"]);
@@ -608,10 +608,11 @@ export function listarUser(){
 
 // listarUser();
 
-// let indice = 2
+let indice = 2
 
 export function listarContats(idUsuario){
   console.table(usuarios["whats-users"][idUsuario].contacts);
+  // console.log(usuarios["whats-users"][idUsuario].contacts)
 }
 
 // listarContats();

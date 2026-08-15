@@ -353,10 +353,11 @@ main {
 
 .img-perfil > img {
   border-radius: 100%;
+  box-shadow: 0px 4px 10px rgba(3, 3, 3, 0.486);
 }
 
 .container_perfil {
-  gap: 10px;
+  gap: 42px;
   padding: 20px 15px;
-
+  height: 100%;
 }
