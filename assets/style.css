@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,13 +14,43 @@ img {
   max-width: 100%;
 }
 
+/* Utilitários */
+.ocultar {
+  display: none;
+}
+
+
+/* ==========================================================================
+   2. ESTRUTURA E LAYOUT PRINCIPAL (GRID E BODY)
+   ========================================================================== */
 body {
   height: 100dvh;
-  width: 100%; /* Corrigido: impede rolagem horizontal indesejada */
+  width: 100%;
   display: grid;
   grid-template-columns: 60px 1fr 2fr;
 }
 
+.section {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  overflow-y: hidden;
+  border-right: 1px solid #e0e0e0;
+}
+
+main {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("imgs/whatsapp_bg.png");
+}
+
+
+/* ==========================================================================
+   3. BARRA DE NAVEGAÇÃO LATERAL (NAV)
+   ========================================================================== */
 nav {
   background-color: #f7f5f2;
   display: flex;
@@ -45,21 +78,11 @@ nav {
   background-color: #d8f8d2;
 }
 
-.section,
-.container_perfil {
-  height: 100%;
-  background-color: #ffffff;
-  overflow-y: hidden;
-  border-right: 1px solid #e0e0e0;
-}
 
-.container_perfil {
-  display: flex;
-  flex-direction: column;
-  gap: 42px;
-  padding: 20px 15px;
-}
-
+/* ==========================================================================
+   4. SEÇÃO DE CONVERSAS (LISTA LATERAL)
+   ========================================================================== */
+/* Cabeçalho da Lista de Conversas */
 .container-topo-conversas {
   display: flex;
   flex-direction: column;
@@ -98,6 +121,7 @@ nav {
   background-color: #d8f8d2;
 }
 
+/* Campo de Busca e Filtros */
 .container-input {
   width: 100%;
 }
@@ -138,6 +162,7 @@ input:focus {
   background-color: #d8f8d2;
 }
 
+/* Lista de Mensagens / Cards */
 .container-mensagens {
   display: flex;
   flex-direction: column;
@@ -180,7 +205,7 @@ input:focus {
 
 .horario-mensagem {
   color: #53b06d;
-  font-size: 0.75rem; /* Corrigido: trocado de 4mm para rem */
+  font-size: 0.75rem;
 }
 
 .notificacao-mensagem {
@@ -196,14 +221,11 @@ input:focus {
   font-size: 0.75rem;
 }
 
-main {
-  height: 100dvh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-image: url("imgs/whatsapp_bg.png");
-}
 
+/* ==========================================================================
+   5. ÁREA PRINCIPAL DO CHAT (MENSAGENS)
+   ========================================================================== */
+/* Topo do Chat Ativo */
 .container-topo-mensagens {
   width: 100%;
   display: flex;
@@ -226,6 +248,7 @@ main {
   gap: 10px;
 }
 
+/* Grid do fluxo de conversas */
 .grid-msg {
   width: 100%;
   display: grid;
@@ -236,6 +259,7 @@ main {
   padding: 10px 0;
 }
 
+/* Balões de Mensagem */
 .msg-recebida,
 .msg-enviada {
   position: relative;
@@ -259,7 +283,13 @@ main {
   border-radius: 15px 0 15px 15px;
 }
 
-/* Rabinho da mensagem recebida */
+.msg-recebida > span,
+.msg-enviada > span {
+  font-size: 0.6875rem;
+  color: #666;
+}
+
+/* Rabinhos (Seta) dos balões */
 .affs {
   position: absolute;
   top: 0;
@@ -268,23 +298,27 @@ main {
   border-left: 10px solid transparent;
 }
 
-/* Corrigido: Rabinho alinhado à direita de forma relativa */
 .affs-enviadas {
   position: absolute;
   top: 0;
-  right: -10px; 
+  right: -10px;
   border-top: 10px solid #d8f8d2;
   border-right: 10px solid transparent;
 }
 
-.msg-recebida > span,
-.msg-enviada > span {
-  font-size: 0.6875rem;
-  color: #666;
-}
 
-.ocultar {
-  display: none;
+/* ==========================================================================
+   6. PAINEL DE PERFIL DO USUÁRIO
+   ========================================================================== */
+.container_perfil {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 20px 15px;
+  background-color: #ffffff;
+  overflow-y: hidden;
+  border-right: 1px solid #e0e0e0;
 }
 
 .img-perfil {
