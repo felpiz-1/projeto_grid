@@ -23,7 +23,11 @@ const elemento = {
     listaContatos: document.querySelector(".container-mensagens"),
     gridMensagens: document.querySelector(".grid-msg"),
     nomeTopo: document.querySelector(".container-topo-mensagens h2"),
-    fotoTopo: document.querySelector(".container-topo-mensagens .foto-perfil")
+    fotoTopo: document.querySelector(".container-topo-mensagens .foto-perfil"),
+    fotoPerfil: document.querySelector(".img-perfil img"),
+    nomePerfil: document.querySelector(".nome_perfil .valor-informacao"),
+    telefonePerfil: document.querySelector(".numero-tel"),
+    containerPerfisSecundarios: document.querySelector(".container_perfis_secundarios")
 };
 
 function carregarMensagens(contato, fotoUrl) {
@@ -87,10 +91,10 @@ function criarontatos(srcFoto, nome, hora, ultima, naoLidas, idContato, aoClicar
     elemento.listaContatos.appendChild(cardContatos);
 }
 
-function carregarContatos() {
+function carregarContatos(usuarioIndex = 0) {
     elemento.listaContatos.innerHTML = "";
 
-    const usuario = usuarios["whats-users"][0];
+    const usuario = usuarios["whats-users"][usuarioIndex];
 
     usuario.contacts.forEach((contato, index) => {
         const ultimasMensagens = contato.messages;
@@ -99,7 +103,7 @@ function carregarContatos() {
         const textoUltimaMsg = ultimaMsg.content;
         const horaUltimaMsg = ultimaMsg.time;
 
-        const fotoUrl = `https://i.pravatar.cc/150?img=${index + 12}`;
+        const fotoUrl = `https://i.pravatar.cc/150?img=${(usuarioIndex * 10) + index + 12}`;
 
         const aoClicar = () => carregarMensagens(contato, fotoUrl);
 
@@ -111,4 +115,47 @@ function carregarContatos() {
     });
 }
 
-carregarContatos();
+function carregarPerfil(usuarioIndex) {
+    const usuario = usuarios["whats-users"][usuarioIndex];
+
+    const fotoPerfilUrl = `https://i.pravatar.cc/150?img=${usuarioIndex * 15 + 2}`;
+    elemento.fotoPerfil.src = fotoPerfilUrl;
+    fotoPerfilNav.src = fotoPerfilUrl;
+    
+    elemento.nomePerfil.innerText = usuario.account;
+    elemento.telefonePerfil.innerText = usuario.number;
+
+    carregarContatos(usuarioIndex);
+}
+
+function renderizarOpcoesPerfis() {
+    elemento.containerPerfisSecundarios.innerHTML = "";
+
+    const listaUsuarios = usuarios["whats-users"];
+
+    listaUsuarios.forEach((usr, index) => {
+        const containerConta = document.createElement('div');
+        const imgFoto = document.createElement('img');
+        const pNick = document.createElement('p');
+
+        containerConta.className = "container-contas";
+        containerConta.style.cursor = "pointer";
+
+        imgFoto.className = "foto-perfil";
+        imgFoto.src = `https://i.pravatar.cc/150?img=${index * 15 + 2}`;
+        imgFoto.alt = usr.nickname;
+
+        pNick.className = "nick-conta";
+        pNick.innerText = usr.nickname;
+
+        containerConta.addEventListener('click', () => {
+            carregarPerfil(index);
+        });
+
+        containerConta.append(imgFoto, pNick);
+        elemento.containerPerfisSecundarios.appendChild(containerConta);
+    });
+}
+
+renderizarOpcoesPerfis();
+carregarPerfil(0);
