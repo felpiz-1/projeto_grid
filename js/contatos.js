@@ -600,27 +600,3 @@ export const usuarios = {
 };
 
 
-console.table(usuarios["whats-users"][0].contacts)
-
-export function listarUser(){
-  console.table(usuarios["whats-users"]);
-}
-
-// listarUser();
-
-let indice = 2
-
-export function listarContats(idUsuario){
-  console.table(usuarios["whats-users"][idUsuario].contacts);
-  // console.log(usuarios["whats-users"][idUsuario].contacts)
-}
-
-// listarContats();
-
-// let indiceMensagens = 3
-
-export function litarMensagensContats(idUsuario, idMessages){
-  console.table(usuarios["whats-users"][idUsuario].contacts[idMessages].messages)
-}
-
-// litarMensagensContats()
