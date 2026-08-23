@@ -1,5 +1,24 @@
 import { usuarios, listarUser, listarContats, litarMensagensContats} from "./contatos.js";
 
+const iconeMensagensNav = document.getElementById('icone-msg');
+const fotoPerfilNav = document.getElementById('secao-perfil');
+
+const secaoMensagens = document.querySelector('.section');
+const secaoPerfil = document.querySelector('.container_perfil');
+
+function abrirPerfil() {
+  secaoMensagens.classList.add('ocultar');
+  secaoPerfil.classList.remove('ocultar');
+}
+
+function abrirMensagens() {
+  secaoPerfil.classList.add('ocultar');
+  secaoMensagens.classList.remove('ocultar');
+}
+
+fotoPerfilNav.addEventListener('click', abrirPerfil);
+iconeMensagensNav.addEventListener('click', abrirMensagens);
+
 listarUser()
 listarContats(2)
 litarMensagensContats(0,3)
